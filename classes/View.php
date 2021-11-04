@@ -10,9 +10,9 @@ class View
     protected $pageUrl;
     protected $db;
 
-    public function __construct($hash, $ipAddress, $userAgent, $viewDate, $pageUrl, $db)
+    public function __construct($ipAddress, $userAgent, $viewDate, $pageUrl, $db)
     {
-        $this->hash = $hash;
+        $this->hash = sha1($ipAddress.$userAgent.$pageUrl);
         $this->ipAddress = $ipAddress;
         $this->userAgent = $userAgent;
         $this->viewDate = $viewDate;

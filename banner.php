@@ -28,11 +28,8 @@ $userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 
 $viewDate = date('Y-m-d H:i:s', time());
 $pageUrl = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
 
-/*  Calculate user hash   */
-$viewHash = sha1($ipAddress.$userAgent.$pageUrl);
-
 /*  Record user data    */
-$view = new View($viewHash, $ipAddress , $userAgent ,$viewDate, $pageUrl, $db);
+$view = new View($ipAddress , $userAgent ,$viewDate, $pageUrl, $db);
 $view->hit();
 
 /*  Paint image */

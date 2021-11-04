@@ -6,7 +6,7 @@ use testApplication\View as View;
 use testApplication\Image as Image;
 
 try {
-    $db = new PDO('mysql:host='.$config['dbHost'].';dbname='.$config['dbName'], $config['dbUser'], $config['dbPass']);
+    $db = new PDO('mysql:host=' . $config['dbHost'] . ';dbname=' . $config['dbName'], $config['dbUser'], $config['dbPass']);
 } catch (PDOException $e) {
     print "DB Error!: " . $e->getMessage();
     die();

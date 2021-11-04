@@ -12,7 +12,7 @@ class View
 
     public function __construct($ipAddress, $userAgent, $viewDate, $pageUrl, $db)
     {
-        $this->hash = sha1($ipAddress.$userAgent.$pageUrl);
+        $this->hash = sha1($ipAddress . $userAgent . $pageUrl);
         $this->ipAddress = $ipAddress;
         $this->userAgent = $userAgent;
         $this->viewDate = $viewDate;
@@ -52,7 +52,6 @@ class View
 
         if ($res)
             return true;
-
 
         return false;
     }
